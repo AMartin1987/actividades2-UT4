@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Band>
+    <NameBand>Patricio Rey y Sus Redonditos de Ricota</NameBand>
+    <History>Patricio Rey y Sus Redonditos de Ricota fue una de las bandas de rock más icónicas de Argentina, 
+    activa entre 1976 y 2001. Formada por Carlos "Indio" Solari y Eduardo "Skay" Beilinson, desarrolló un estilo 
+    único que combinaba rock, psicodelia y crítica social, con letras enigmáticas y una identidad autogestionada. 
+    Rechazaron la industria discográfica tradicional y cultivaron un culto de seguidores inigualable, los "ricoteros", 
+    que los convirtieron en un fenómeno masivo sin necesidad de grandes campañas de difusión. Con discos emblemáticos 
+    como Oktubre (1986) y ¡Bang! ¡Bang! Estás liquidado (1989), sus recitales se transformaron en rituales multitudinarios. 
+    Sin embargo, conflictos internos llevaron a su disolución en 2001, dejando una huella imborrable en la historia del 
+    rock argentino.</History>
+    <Awards>Premio Konex de Platino 2005 a la mejor banda de rock argentino de la década.</Awards>   
+    <Member Plays="vocals" BDate="1949-01-17">
+        <NameMember>Carlos Alberto "Indio" Solari</NameMember>       
+        <Role>Liricista, vocalista</Role>
+        <Joined YEAR="1976"/>
+    </Member>
+    <Member Plays="guitar" BDate="1952-01-15">
+        <NameMember>Eduardo "Skay" Beilinson</NameMember>       
+        <Role>Liricista, guitarrista</Role>
+        <Joined YEAR="1976"/>
+    </Member>
+    <Member Plays="bass" BDate="1959-07-03">
+        <NameMember>Daniel "Semilla" Bucciarelli</NameMember>       
+        <Role>Bajista</Role>
+        <Joined YEAR="1982"/>
+    </Member>
+    <Member Plays="drums" BDate="1961-01-04">
+        <NameMember>Walter Sidotti</NameMember>       
+        <Role>Baterista</Role>
+        <Joined YEAR="1987"/>
+    </Member>
+    <Member Plays="saxophone" BDate="1955-10-20">
+        <NameMember>Sergio Dawi</NameMember>       
+        <Role>Saxofonista, tecladista</Role>
+        <Joined YEAR="1987"/>
+    </Member>
+
+    <Instrument Id="vocals">Voz</Instrument>
+    <Instrument Id="guitar">Guitarra</Instrument>
+    <Instrument Id="bass">Bajo</Instrument>
+    <Instrument Id="drums">Batería</Instrument>
+    <Instrument Id="saxophone">Saxofón</Instrument>
+</Band>
+

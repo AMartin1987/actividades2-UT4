@@ -1,0 +1,94 @@
+# Ejercicio 4.
+# Corrige errores y explica qué es incorrecto.
+
+------------------------------------------
+a)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE numeros [
+    <!ELEMENT numero (CDATA)>
+]>
+
+<numeros>
+52
+</numeros>
+
+# El error está en CDATA: Este no se usa en una sección de 
+DTD (sino en XML). Para números en DTD se  debe usar en cambio #PCDATA.
+# Además, cada ítem de tag <numero> debe estar encerrado dentro de un tag 
+más general <numeros>
+
+# VERSIÓN CON CORRECCIONES
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE numeros [
+    <!ELEMENT numeros (numero+)>
+    <!ELEMENT numero (#PCDATA)>
+]>
+
+<numeros>
+    <numero>52</numero>
+</numeros>
+
+------------------------------------------
+b)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ligaDeFutbol [
+    <!ELEMENT ligaDeFutbol (partido*)>
+    <!ELEMENT partido (local, visitante)>
+    <!ELEMENT local (#PCDATA)>
+    <!ELEMENT visitante (#PCDATA)>
+    <!ATTLIST local goles CDATA #REQUIRED>
+    <!ELEMENT visitante goles CDATA #REQUIRED>
+]>
+
+<liga>
+    <partido>
+        <local goles="0">Real Madrid</local>
+        <visitante goles="1">Barcelona</visitante>
+    </partido>
+    <partido>
+        <local goles="3">Hércules</local>
+        <visitante goles="3">Albacete</visitante>
+    </partido>
+    <partido>
+        <local goles="4">Balmis</local>
+    </partido>
+</ligaDeFutbol>
+
+# El primer error es que la etiqueta "liga" es incorrecta (debiera decir
+"ligaDeFutbol", como señala en el DTD).
+# Otro error es que la etiqueta visitante debe ser de uso obligatorio como se
+especifica en el DTD. Sin embargo, en el tercer ítem "partido" esta etiqueta no
+aparece.
+# En el DOCTYPE, la linea: 
+<!ELEMENT visitante goles CDATA #REQUIRED>
+es incorrecta, ya que no se define un !ELEMENT sino un !ATTLIST.
+
+# VERSIÓN CON CORRECCIONES
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ligaDeFutbol [
+    <!ELEMENT ligaDeFutbol (partido*)>
+    <!ELEMENT partido (local, visitante)>
+    <!ELEMENT local (#PCDATA)>
+    <!ELEMENT visitante (#PCDATA)>
+    <!ATTLIST local goles CDATA #REQUIRED>
+    <!ATTLIST visitante goles CDATA #REQUIRED>
+]>
+
+<ligaDeFutbol>
+    <partido>
+        <local goles="0">Real Madrid</local>
+        <visitante goles="1">Barcelona</visitante>
+    </partido>
+    <partido>
+        <local goles="3">Hércules</local>
+        <visitante goles="3">Albacete</visitante>
+    </partido>
+    <partido>
+        <local goles="4">Balmis</local>
+        <visitante goles="2">Alicante</visitante>
+    </partido>
+</ligaDeFutbol>
